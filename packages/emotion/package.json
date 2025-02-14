@@ -1,0 +1,27 @@
+{
+  "name": "@xy-direction/emotion",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@emotion/jest": "^11.13.0",
+    "@testing-library/react": "^16.2.0",
+    "jsdom": "^26.0.0",
+    "tsup": "^6.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.5"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "xy-direction",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "vitest --coverage",
+    "version": "npx @changesets/cli",
+    "publish": "npx @changesets/cli publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.12",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/node": "^22.13.4",
+    "@vitest/coverage-v8": "^3.0.5",
+    "jsdom": "^26.0.0",
+    "turbo": "^1.10.0",
+    "vitest": "^3.0.5"
+  },
+  "packageManager": "npm@10.9.0",
+  "workspaces": [
+    "packages/*"
+  ]
+}

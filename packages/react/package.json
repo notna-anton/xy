@@ -1,0 +1,25 @@
+{
+  "name": "@xy-direction/react",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.2.0",
+    "@xy-direction/web-components": "*",
+    "jsdom": "^26.0.0",
+    "tsup": "^6.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.5"
+  }
+}
