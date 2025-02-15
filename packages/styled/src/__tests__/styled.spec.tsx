@@ -2,6 +2,7 @@ import "@testing-library/jest-dom/vitest";
 import { render } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
 import { X, Y } from "@xy-direction/styled";
+import { ThemeProvider } from "styled-components";
 
 describe.each([X, Y])("Component", (Box) => {
   test("renders with default styles", () => {
@@ -71,5 +72,37 @@ describe("Y Component", () => {
   test("renders with column direction", () => {
     const { container } = render(<Y />);
     expect(container.firstChild).toHaveStyle("flex-direction: column");
+  });
+});
+
+describe.each([X, Y])("Component with theme", (Box) => {
+  test("applies outline when theme.xyDebug is true", () => {
+    const theme = { xyDebug: true };
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <Box />
+      </ThemeProvider>
+    );
+    expect(container.firstChild).toHaveStyle("outline: 1px solid red");
+  });
+
+  test("does not apply outline when theme.xyDebug is false and debug is not set", () => {
+    const theme = { xyDebug: false };
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <Box />
+      </ThemeProvider>
+    );
+    expect(container.firstChild).not.toHaveStyle("outline: 1px solid red");
+  });
+
+  test("applies outline when theme.xyDebug is false but debug is true", () => {
+    const theme = { xyDebug: false };
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <Box debug />
+      </ThemeProvider>
+    );
+    expect(container.firstChild).toHaveStyle("outline: 1px solid red");
   });
 });

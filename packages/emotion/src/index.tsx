@@ -1,5 +1,6 @@
 "use client";
 import styled from "@emotion/styled";
+import { Theme } from "@emotion/react";
 
 export interface BoxProps {
   g?: string;
@@ -13,6 +14,10 @@ export interface BoxProps {
   fullWidth?: boolean;
   fullHeight?: boolean;
   debug?: boolean;
+}
+
+interface ExtendedTheme extends Theme {
+  xyDebug?: boolean;
 }
 
 const Box = styled("div", {
@@ -41,7 +46,8 @@ const Box = styled("div", {
   ${({ shrink }) => (shrink ? `flex-shrink: 0;` : undefined)};
   ${({ fullWidth }) => (fullWidth ? `width: 100%;` : undefined)};
   ${({ fullHeight }) => (fullHeight ? `height: 100%;` : undefined)};
-  ${({ debug }) => debug && `outline: 1px solid red;`};
+  ${({ theme, debug }: { theme: ExtendedTheme; debug?: boolean }) =>
+    (theme?.xyDebug || debug) && `outline: 1px solid red;`}
 `;
 
 export const X = styled(Box)`
