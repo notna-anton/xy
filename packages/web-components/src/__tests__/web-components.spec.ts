@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll, beforeEach } from "vitest";
-import "..";
+import "@xy-direction/web-components";
 
 beforeAll(async () => {
   await customElements.whenDefined("x-box");

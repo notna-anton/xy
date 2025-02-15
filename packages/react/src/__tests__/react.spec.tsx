@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/vitest";
 import { render } from "@testing-library/react";
 import { vi, describe, test, expect, beforeEach } from "vitest";
-import { X, Y } from "../index";
+import { X, Y } from "@xy-direction/react";
 
 describe("X and Y components", () => {
   beforeEach(() => {

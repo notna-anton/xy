@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/vitest";
 import { render } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
-import { X, Y } from "../index";
+import { X, Y } from "@xy-direction/emotion";
 
 describe.each([X, Y])("Component", (Box) => {
   test("renders with default styles", () => {
