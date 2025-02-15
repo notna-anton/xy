@@ -1,9 +1,47 @@
 {
   "name": "@xy-direction/emotion",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publishConfig": {
     "access": "public"
   },
+  "description": "Minimalistic and efficient flexbox layout components for React",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notna-anton/xy"
+  },
+  "bugs": {
+    "url": "https://github.com/notna-anton/xy/issues"
+  },
+  "keywords": [
+    "react",
+    "flexbox",
+    "layout",
+    "grid",
+    "components",
+    "styled-components",
+    "emotion",
+    "css-in-js",
+    "lightweight",
+    "ui",
+    "frontend",
+    "web-development",
+    "dx",
+    "developer-experience",
+    "spacing",
+    "gap",
+    "padding",
+    "margin",
+    "xy",
+    "direction",
+    "horizontal",
+    "vertical",
+    "wrapper",
+    "container",
+    "box",
+    "flex-container",
+    "styled",
+    "modern"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "peerDependencies": {

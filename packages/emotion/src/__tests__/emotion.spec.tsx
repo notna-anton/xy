@@ -25,6 +25,21 @@ describe.each([X, Y])("Component", (Box) => {
     expect(container.firstChild).toHaveStyle("gap: 15px");
   });
 
+  test("applies padding when prop is set", () => {
+    const { container } = render(<Box padding="10px" />);
+    expect(container.firstChild).toHaveStyle("padding: 10px");
+  });
+
+  test("applies margin when prop is set", () => {
+    const { container } = render(<Box margin="20px" />);
+    expect(container.firstChild).toHaveStyle("margin: 20px");
+  });
+
+  test("applies gap when prop is set", () => {
+    const { container } = render(<Box gap="15px" />);
+    expect(container.firstChild).toHaveStyle("gap: 15px");
+  });
+
   test("applies flex-wrap when wrap is true", () => {
     const { container } = render(<Box wrap />);
     expect(container.firstChild).toHaveStyle("flex-wrap: wrap");

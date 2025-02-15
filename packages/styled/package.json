@@ -3,7 +3,45 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.3",
+  "description": "Minimalistic and efficient flexbox layout components for React",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notna-anton/xy"
+  },
+  "bugs": {
+    "url": "https://github.com/notna-anton/xy/issues"
+  },
+  "keywords": [
+    "react",
+    "flexbox",
+    "layout",
+    "grid",
+    "components",
+    "styled-components",
+    "emotion",
+    "css-in-js",
+    "lightweight",
+    "ui",
+    "frontend",
+    "web-development",
+    "dx",
+    "developer-experience",
+    "spacing",
+    "gap",
+    "padding",
+    "margin",
+    "xy",
+    "direction",
+    "horizontal",
+    "vertical",
+    "wrapper",
+    "container",
+    "box",
+    "flex-container",
+    "styled",
+    "modern"
+  ],
+  "version": "0.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "peerDependencies": {

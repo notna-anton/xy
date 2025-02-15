@@ -10,10 +10,15 @@ export interface BoxProps {
   wrap?: boolean;
   shrink?: boolean;
   align?: string;
+  alignItems?: string;
   justify?: string;
+  justifyContent?: string;
   fullWidth?: boolean;
   fullHeight?: boolean;
   debug?: boolean;
+  padding?: string;
+  gap?: string;
+  margin?: string;
 }
 
 interface ExtendedTheme extends Theme {
@@ -24,25 +29,35 @@ const Box = styled("div", {
   shouldForwardProp: (prop) =>
     ![
       "g",
+      "gap",
       "m",
+      "margin",
       "p",
+      "padding",
       "inline",
       "wrap",
       "shrink",
       "align",
+      "alignItems",
       "justify",
+      "justifyContent",
       "fullWidth",
       "fullHeight",
       "debug",
     ].includes(prop),
 })<BoxProps>`
   display: ${({ inline }) => (inline ? "inline-flex" : "flex")};
-  ${({ p }) => (p ? `padding: ${p}` : undefined)};
-  ${({ g }) => (g ? `gap: ${g}` : undefined)};
-  ${({ m }) => (m ? `margin: ${m}` : undefined)};
+  ${({ p, padding }) =>
+    p || padding ? `padding: ${p || padding}` : undefined};
+  ${({ g, gap }) => (g || gap ? `gap: ${g || gap}` : undefined)};
+  ${({ m, margin }) => (m || margin ? `margin: ${m || margin}` : undefined)};
   ${({ wrap }) => (wrap ? "flex-wrap: wrap;" : undefined)};
-  ${({ justify }) => (justify ? `justify-content: ${justify};` : undefined)};
-  ${({ align }) => (align ? `align-items: ${align};` : undefined)};
+  ${({ justify, justifyContent }) =>
+    justify || justifyContent
+      ? `justify-content: ${justify || justifyContent};`
+      : undefined};
+  ${({ align, alignItems }) =>
+    align || alignItems ? `align-items: ${align || alignItems};` : undefined};
   ${({ shrink }) => (shrink ? `flex-shrink: 0;` : undefined)};
   ${({ fullWidth }) => (fullWidth ? `width: 100%;` : undefined)};
   ${({ fullHeight }) => (fullHeight ? `height: 100%;` : undefined)};
